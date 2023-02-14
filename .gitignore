@@ -1,61 +1,41 @@
-# App
-node_modules/
-juiceshop.sqlite
-order_*.pdf
-app/
-!frontend/src/app
-uploads/complaints/*.*
-!uploads/complaints/.gitkeep
-ftp/legal.md
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
 package-lock.json
-i18n/*.json
-i18n/*.invalid
-!frontend/src/assets/i18n/*.json
-!data/static/i18n/*.json
-data/chatbot/*.*
-!data/chatbot/.gitkeep
-/data/juiceshop.sqlite-journal
 
-# Build
-.nyc_output/
-.sass-cache/
-build/
-cache/
-dist/
-logs/
-vagrant/.vagrant/
-*.orig
-*.out
-*.log
-JSON
-JSON.map
-frontend/src/**/*.js
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# IDEs
-.idea/
-.vscode/
-out/
-*.eml
-*.iml
-*.iws
-*.swp
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Branch ghpages
-assets/
-!frontend/src/assets/
+# misc
+/.angular/cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
-# Custom configuration files
-config/*.yml
-!config/addo.yml
-!config/bodgeit.yml
-!config/ctf.yml
-!config/fbctf.yml
-!config/default.yml
-!config/juicebox.yml
-!config/quiet.yml
-!config/test.yml
-!config/7ms.yml
-!config/mozilla.yml
-!config/unsafe.yml
-!config/tutorial.yml
-!config/oss.yml
+# System Files
+.DS_Store
+Thumbs.db

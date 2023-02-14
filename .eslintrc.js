@@ -4,43 +4,23 @@
  */
 
 module.exports = {
-  extends: 'standard-with-typescript',
-  env: {
-    browser: true,
-    node: true,
-    jasmine: true,
-    mocha: true,
-    jest: true
-  },
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
-  },
+  "extends": [
+    'standard-with-typescript',
+],
+  root: true,
   parserOptions: {
-    ecmaVersion: 2018,
-    project: './tsconfig.json'
+    project: './src/tsconfig.*.json',
+    sourceType: 'module'
   },
-  ignorePatterns: [
-    'app/private/**',
-    'vagrant/**',
-    'frontend/**',
-    'data/static/codefixes/**',
-    'dist/**'
-  ],
-  overrides: [
-    {
-      files: ['**/*.ts'],
-      parser: '@typescript-eslint/parser',
-      rules: {
-        'no-void': 'off', // conflicting with recommendation from @typescript-eslint/no-floating-promises
-        // FIXME warnings below this line need to be checked and fixed. Line end comments below are number of findings per rule on 02.05.2022
-        '@typescript-eslint/no-misused-promises': 'off', // 1
-        '@typescript-eslint/explicit-function-return-type': 'off', // 197
-        '@typescript-eslint/restrict-plus-operands': 'off', // 250
-        '@typescript-eslint/strict-boolean-expressions': 'off', // 337
-        '@typescript-eslint/restrict-template-expressions': 'off', // 395
-        '@typescript-eslint/no-var-requires': 'off' // 509
-      }
-    }
-  ]
+  rules: { // FIXME Remaining linting errors since migrating from StandardJS-style TSLint. Significant refactoring expected in order to turn on!
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off',
+    '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-extraneous-class': 'off'
+  }
 }
